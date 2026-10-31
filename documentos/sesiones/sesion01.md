@@ -40,7 +40,6 @@
 *   En el escenario vigente el acceso está limitado a un grupo reducido de personas que cuentan con un nivel de permisos idéntico.
 
 ### 3.2. Problemas Identificados
-*Consecuencias negativas del proceso actual.*
 *   Las entidades pueden solicitar información acerca de un conjunto de proyectos, lo cual se dificulta a causa de la herramienta utilizada en la gestión de los datos de las propuestas/proyectos, se presenta una alta dificultad a la hora del cribado de registros al momento de solicitar datos de una cantidad considerable, ya que debido a la naturaleza de la herramienta se requiere realizar una búsqueda manual para hallar los registros deseados. Dicha búsqueda manual puede conllevar errores humanos tales como omisión de proyectos o un mal conteo.
 *   Casos explícitos de búsqueda serían hallar los que se llevaron a cabo entre 2022 hasta 2025 o un conteo de los proyectos donde el investigador principal sea una persona específica.
 
@@ -66,3 +65,10 @@
 ## 4. Acuerdos y Decisiones Tomadas
 *   **Aprobado:** Nivel de detalle en la manipulación de campos de datos de registro.
 *   **Descartado:** La necesidad de una variedad de perfiles en el sistema. Pues los usuarios tendrán una capacidad casi homogénea en el sistema.
+
+---
+
+## 5. Anexos y Evidencias
+*   [Registro de propuestas/proyectos (CSV)](./../../evidencias/sesion01/registro-propuestas-proyectos.csv) - Archivo de visualización rápida de la estructura de registro.
+*   [Registro de propuestas/proyectos (XLSX)](./../../evidencias/sesion01/registro-propuestas-proyectos.xlsx) - Archivo original de muestra del formato de registro proveído por el cliente.
+*   [Departamento de proyectos](./../../evidencias/sesion01/esquema_dpto_proyectos.png) - Foto tomada de las anotaciones en la pizarra del cliente sobre el departamento de proyectos.
