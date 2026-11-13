@@ -1,0 +1,20 @@
+@startuml
+
+state "Solicitado" as Solicitado
+state "En Elaboración" as Elaboracion
+state "En Revisión" as Revision
+state "Entregado" as Entregado
+
+[*] --> Solicitado
+
+Solicitado --> Elaboracion : recibe solicitud
+
+Elaboracion --> Revision : completar informe
+
+Revision --> Elaboracion : rechazar informe
+
+Revision --> Entregado : validar informe
+
+Entregado --> [*]
+
+@enduml
