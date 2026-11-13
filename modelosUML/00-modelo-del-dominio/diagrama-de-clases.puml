@@ -1,0 +1,51 @@
+@startuml
+
+hide circle
+hide empty members
+
+class Convocatoria
+
+class Propuesta
+
+class EntidadFinanciera
+
+class OrganismoExterno
+
+class OrganismoInstitucional
+
+class Informe
+
+class Investigador
+
+class Rol
+
+class Auditor
+
+class Proyecto
+
+class GestorDeProyecto
+
+class GestorDePropuesta
+
+Propuesta -- GestorDePropuesta : es expuesta por >
+Proyecto -- GestorDeProyecto : es coordinado por >
+
+OrganismoExterno <|-- EntidadFinanciera
+OrganismoExterno <|-- OrganismoInstitucional
+
+EntidadFinanciera -- Convocatoria : abre >
+Propuesta -- Proyecto : se convierte en >
+Propuesta -- Convocatoria: se presenta a >
+Proyecto -- Auditor: es revisado por >
+EntidadFinanciera -- Proyecto : financia >
+
+Propuesta -- Rol : cuenta con >
+
+Rol -- Investigador: es llevado a cabo por >
+
+Informe -- OrganismoExterno: es solicitado por >
+Proyecto -- Informe : es analizado por >
+
+
+
+@enduml
