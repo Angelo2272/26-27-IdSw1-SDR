@@ -1,0 +1,46 @@
+@startuml
+scale 600 width
+
+[*] --> Propuesta : Registrar propuesta
+
+state Propuesta {
+  ' Fase de preparación interna
+}
+
+state Entregada {
+  ' Presentada a la convocatoria
+}
+
+state En_Evaluacion {
+  ' Siendo analizada por la Entidad Financiadora
+}
+
+state Concedida {
+  ' Aprobada (Genera el Proyecto)
+}
+
+state Rechazada {
+  ' Denegada permanentemente
+}
+
+state Descartada {
+  ' Cancelada internamente antes de resolución
+}
+
+' --- Flujo Principal de Avance ---
+Propuesta --> Entregada : Presentar a convocatoria
+Entregada --> En_Evaluacion : Iniciar revisión por entidad
+
+' --- Resoluciones Finales ---
+En_Evaluacion --> Concedida : Entidad aprueba
+En_Evaluacion --> Rechazada : Entidad deniega
+
+' --- Descarte Interno ---
+Propuesta --> Descartada : Cancelar internamente
+
+' --- Cierre del Ciclo (Nodos Finales) ---
+Concedida --> [*] : Se convierte en Proyecto
+Rechazada --> [*] : Se cierra permanentemente
+Descartada --> [*] : Se archiva
+
+@enduml
