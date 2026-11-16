@@ -1,0 +1,57 @@
+@startuml
+scale 600 width
+
+[*] --> Expresion_de_Interes : Registrar interés inicial
+
+state Expresion_de_Interes {
+  ' Fase I
+}
+
+state Propuesta {
+  ' Fase de preparación interna
+}
+
+state Entregado {
+  ' E-Entregado
+}
+
+state En_Validacion {
+  ' Evaluacion por Entidad
+}
+
+state Descartado {
+  ' D-Descartado (no entregado)
+}
+
+state Rechazado {
+  ' R-Rechazado (entregado y no obtenido)
+}
+
+state Obtenido {
+  ' O-Obtenido
+}
+
+state No_Aceptado {
+  ' N-No aceptado (obtenido pero se renuncia a la ayuda)
+}
+
+' --- Flujo Principal de Avance ---
+Expresion_de_Interes --> Propuesta : Presentar Propuesta
+Propuesta --> Entregado : Presentar a convocatoria
+Entregado --> En_Validacion : entrega propuesta
+
+' --- Resoluciones Finales de la Entidad ---
+En_Validacion --> Obtenido : Concesión
+En_Validacion --> Rechazado : Entidad deniega
+
+' --- Descarte Interno Universitario ---
+Propuesta --> Descartado : observación (Cancelar antes de entregar)
+En_Validacion --> No_Aceptado : Concesión sin ayuda (Renuncia)
+
+' --- Cierre del Ciclo (Nodos Finales) ---
+Obtenido --> [*] : Se convierte en Proyecto
+Rechazado --> [*] : Cierre permanente
+Descartado --> [*] : Archivo interno
+No_Aceptado --> [*] : Archivo por renuncia
+
+@enduml
