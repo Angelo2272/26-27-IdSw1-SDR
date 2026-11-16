@@ -1,45 +1,30 @@
 @startuml
 scale 600 width
 
-[*] --> Expresion_de_Interes : Registrar interés inicial
+[*] --> EXPRESION_DE_INTERES : Registrar interés inicial
 
-state Expresion_de_Interes {
-}
+state EXPRESION_DE_INTERES
+state PROPUESTA
+state ENTREGADO
+state EN_VALIDACION
+state DESCARTADO
+state RECHAZADO
+state OBTENIDO
+state NO_ACEPTADO
 
-state Propuesta {
-}
+EXPRESION_DE_INTERES --> PROPUESTA : Presentar Propuesta
+PROPUESTA --> ENTREGADO : Presentar a convocatoria
+ENTREGADO --> EN_VALIDACION : entrega propuesta
 
-state Entregado {
-}
+EN_VALIDACION --> OBTENIDO : Concesión
+EN_VALIDACION --> RECHAZADO : Entidad deniega
 
-state En_Validacion {
-}
+PROPUESTA --> DESCARTADO : observación (Cancelar antes de entregar)
+EN_VALIDACION --> NO_ACEPTADO : Concesión sin ayuda (Renuncia)
 
-state Descartado {
-}
-
-state Rechazado {
-}
-
-state Obtenido {
-}
-
-state No_Aceptado {
-}
-
-Expresion_de_Interes --> Propuesta : Presentar Propuesta
-Propuesta --> Entregado : Presentar a convocatoria
-Entregado --> En_Validacion : entrega propuesta
-
-En_Validacion --> Obtenido : Concesión
-En_Validacion --> Rechazado : Entidad deniega
-
-Propuesta --> Descartado : observación 
-En_Validacion --> No_Aceptado : Concesión sin ayuda 
-
-Obtenido --> [*] : Se convierte en Proyecto
-Rechazado --> [*] : Cierre permanente
-Descartado --> [*] : Archivo interno
-No_Aceptado --> [*] : Archivo por renuncia
+OBTENIDO --> [*] : Se convierte en Proyecto
+RECHAZADO --> [*] : Cierre permanente
+DESCARTADO --> [*] : Archivo interno
+NO_ACEPTADO --> [*] : Archivo por renuncia
 
 @enduml
