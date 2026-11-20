@@ -17,8 +17,6 @@ class Informe
 
 class Investigador
 
-class Rol
-
 class Auditor
 
 class Proyecto
@@ -27,25 +25,24 @@ class GestorDeProyecto
 
 class GestorDePropuesta
 
-Propuesta -- GestorDePropuesta : es expuesta por >
-Proyecto -- GestorDeProyecto : es coordinado por >
+Propuesta -d- GestorDePropuesta : expone <
+Proyecto -d- GestorDeProyecto : coordina <
 
 OrganismoExterno <|-- EntidadFinanciera
 OrganismoExterno <|-- OrganismoInstitucional
 
 EntidadFinanciera -- Convocatoria : abre >
-Propuesta -- Proyecto : se convierte en >
-Propuesta -- Convocatoria: se presenta a >
-Proyecto -- Auditor: es revisado por >
+Propuesta -- Proyecto: se convierte > 
+Convocatoria -- Propuesta: recibe >
+Proyecto -d- Auditor: revisa <
 EntidadFinanciera -- Proyecto : financia >
 
-Propuesta -- Rol : cuenta con >
+Propuesta -d- Investigador : justifica y coordina <
+Proyecto -d- Investigador: ejecuta <
 
-Rol -- Investigador: es llevado a cabo por >
-
-Informe -- OrganismoExterno: es solicitado por >
-Proyecto -- Informe : es analizado por >
-
+OrganismoExterno -d- Informe: solicita >
+Informe -- Propuesta : refleja datos de >
+Informe -- Proyecto : refleja datos de >
 
 
 @enduml
