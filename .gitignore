@@ -1,0 +1,8 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Graphify (local únicamente - no subir a Git)
+graphify-out/
+.agents
+scripts
