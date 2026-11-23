@@ -1,0 +1,15 @@
+@startuml                                                                           
+                                                                                        
+    left to right direction                                                             
+                                                                                        
+    actor "Administrador" as admin                                          
+                                                                                      
+    admin --> (abrirInformes)                                                   
+    admin --> (abrirInforme)
+    admin --> (generarInforme)
+    admin --> (editarInforme)
+    admin --> (eliminarInforme)
+    admin --> (descargarInforme)
+    admin --> (filtrarRegistros)
+                                                                                        
+@enduml
