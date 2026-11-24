@@ -1,15 +1,23 @@
-@startuml                                                                           
-                                                                                        
-    left to right direction                                                             
-                                                                                        
-    actor "Administrador" as admin                                          
-                                                                                      
-    admin --> (abrirInformes)                                                   
-    admin --> (abrirInforme)
-    admin --> (generarInforme)
-    admin --> (editarInforme)
-    admin --> (eliminarInforme)
-    admin --> (descargarInforme)
-    admin --> (filtrarRegistros)
-                                                                                        
+@startuml
+
+    left to right direction
+
+    actor "Administrador" as admin
+
+    usecase "abrirInformes()" as UC1
+    usecase "abrirInforme()" as UC2
+    usecase "generarInforme()" as UC3
+    usecase "editarInforme()" as UC4
+    usecase "eliminarInforme()" as UC5
+    usecase "descargarInforme()" as UC6
+    usecase "filtrarRegistros()" as UC7
+
+    admin --> UC1
+    admin --> UC2
+    admin --> UC3
+    admin --> UC4
+    admin --> UC5
+    admin --> UC6
+    admin --> UC7
+
 @enduml
