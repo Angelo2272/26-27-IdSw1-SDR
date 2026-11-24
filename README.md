@@ -1,38 +1,66 @@
-# Sesiones de requisitado
+<h1 align="center">26-27-IdSw1-SDR · Gestión OTRI</h1>
 
-Este es el repositorio de las sesiones de requisitado de la asignatura de Ingeniería del Software I de UNEATLANTICO.
+<p align="center">
+  <b>Plataforma de Registro, Seguimiento y Cribado de Convocatorias, Propuestas y Proyectos de Investigación</b><br>
+  <i>Oficina de Transferencia de Resultados de Investigación (OTRI) · UNEATLANTICO</i>
+</p>
 
-Se desarrolla, en un caso real, la disciplina de requisitado, que es la puerta de entrada al desarrollo de una solución basada en software. 
+<div align="center">
 
-<div align=center>
-
-| |Coordinador|Cliente|Estadísticas|
-|-|-|-|:-:|
-|1|@Angelo2272| |[👁️](https://github.com/Angelo2272/26-27-IdSw1-SDR) / 📒
-|2|@Raultascon| |[👁️](https://github.com/Raultascon/26-27-IdSw1-SDR) / 📒
-|3|@vanepakk| |[👁️](https://github.com/vanepakk/26-27-IdSw1-SDR) / 📒
-|4|@Alejandracuesta| |[👁️](https://github.com/Alejandracuesta/26-27-IdSw1-SDR) / 📒
-|5|@Silviamontes43| |[👁️](https://github.com/Silviamontes43/26-27-IdSw1-SDR) / 📒
-|6|@Paula-Oreja| |[👁️](https://github.com/Paula-Oreja/26-27-IdSw1-SDR) / 📒
+[![](https://img.shields.io/badge/-Inicio-24292e?style=for-the-badge&logo=github&logoColor=white)](/README.md)
+[![](https://img.shields.io/badge/-Modelo_del_Dominio-24292e?style=for-the-badge&logo=diagramsdotnet&logoColor=white)](/RUP/00-modelo-del-dominio/README.md)
+[![](https://img.shields.io/badge/-Actores_&_Casos_de_Uso-24292e?style=for-the-badge&logo=crewunited&logoColor=white)](/RUP/01-actores-casos-uso/README.md)
+[![](https://img.shields.io/badge/-Sesiones-24292e?style=for-the-badge&logo=googlemeet&logoColor=white)](/documentos/sesiones/README.md)
+[![](https://img.shields.io/badge/-Evidencias-24292e?style=for-the-badge&logo=googlesheets&logoColor=white)](/evidencias/sesion01/)
 
 </div>
 
-> Se ha demostrado, empírica y académicamente, que un porcentaje no menor de proyectos de software que fracasan lo hacen porque está mal llevada esta fase.
+---
 
-<div align=center>
+## [Modelo del Dominio](/RUP/00-modelo-del-dominio/README.md)
 
-||
-|-|
-![](https://raw.githubusercontent.com/mmasias/23-24-IdSw1-SDR/main/imagenes/modelosUML/trabajoRepos.svg)
+Describe la estructura lógica del negocio, las entidades de datos y sus ciclos de vida.
 
-</div>
+* **[Diagrama de Clases](/modelosUML/00-modelo-del-dominio/diagrama-de-clases.puml)** 
+* **[Diagrama de Estados — Propuesta](/modelosUML/00-modelo-del-dominio/diagrama-de-estados-propuesta.puml)**
+* **[Diagrama de Estados — Informe](/modelosUML/00-modelo-del-dominio/diagrama-de-estados-informe.puml)**
 
-## Algunas reglas
+---
 
-- Reuniones oficiales (en horas de clase)
-  - A estas debe asistir el 100% de los integrantes de los grupos.
-  - Si a las reuniones asiste menos del 80% del grupo, la reunión se cancela y el grupo se da por cerrado. La evaluación se realiza de la forma tradicional (examen parcial, examen final).
-- Reuniones extra: de acuerdo a lo pautado con el cliente.
-- Se recomienda utilizar el repo del coordinador del grupo y las herramientas de GitHub para gestionar las reuniones y comunicaciones con el cliente, haciendo racional uso de la trazabilidad.
-- Las imágenes, en la medida de lo posible en formato plantUML. 
-  - Todas las fuentes en la carpeta modelosUML y las imágenes exportadas, en formato svg.
+## [Actores y Casos de Uso](/RUP/01-actores-casos-uso/README.md)
+
+Describe las interacciones de los actores con el sistema y los requisitos funcionales organizados por dimensiones de negocio.
+
+* **[Actores y Casos de Uso](/RUP/01-actores-casos-uso/README.md):** Identificación y justificación de roles y metas de usuario.
+* **[Diagramas UML de Casos de Uso](/modelosUML/01-actores-casos-uso/):** Modelado modular por áreas de negocio.
+* **Diagramas de Contexto:** Autómata de navegación de estados de interfaz.
+* **Casos de Uso Detallados:** Detalle de flujos con autómatas PlantUML.
+* **Prototipos de Interfaz:** Wireframes de interacción visual diseñados con PlantUML Salt.
+
+---
+
+## [Sesiones con el Cliente](/documentos/sesiones/README.md)
+
+Apuntes oficiales, acuerdos de alcance y registros de campo de las reuniones con el cliente.
+
+* **[Minuta Sesión 01 (2026-10-29)](/documentos/sesiones/sesion01.md):** Requisitos, reglas de negocio y problemáticas levantadas.
+
+---
+
+## Estructura del Repositorio
+
+```text
+26-27-IdSw1-SDR/
+├── RUP/                                # Documentación formal del ciclo RUP
+│   ├── 00-modelo-del-dominio/          # Fichas y justificaciones del Modelo del Dominio
+│   └── 01-actores-casos-uso/           # Catálogo preliminar y detalle de Casos de Uso
+├── modelosUML/                         # Fuentes PlantUML (.puml)
+│   ├── 00-modelo-del-dominio/          # Clases y estados del dominio
+│   └── 01-actores-casos-uso/           # Diagramas de casos de uso y navegación
+├── images/                             # Exportaciones vectoriales (.svg)
+│   ├── 00-modelo-del-dominio/          # Gráficos compilados del dominio
+│   └── 01-actores-casos-uso/           # Gráficos compilados de requisitos
+├── documentos/                         # Minutas oficiales de entrevistas
+│   └── sesiones/                       # Registro de acuerdos con el cliente
+├── evidencias/                         # Formatos originales provistos por el cliente
+```
