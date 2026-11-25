@@ -1,4 +1,4 @@
-@startuml
+@startuml diagrama-de-clases
 
 hide circle
 hide empty members
@@ -37,7 +37,7 @@ Convocatoria -- Propuesta: recibe >
 Proyecto -d- Auditor: revisa <
 EntidadFinanciera -- Proyecto : financia >
 
-Propuesta -d- Investigador : justifica y coordina <
+Propuesta -d- Investigador : presenta y coordina <
 Proyecto -d- Investigador: ejecuta <
 
 OrganismoExterno -d- Informe: solicita >
