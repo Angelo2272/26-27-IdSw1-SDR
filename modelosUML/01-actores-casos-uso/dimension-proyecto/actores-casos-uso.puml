@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+
+actor Administrador as admin
+
+usecase "abrirProyecto" as UC1
+usecase "editarProyecto" as UC2
+usecase "abrirHistorial" as UC3
+
+admin --> UC1
+admin --> UC2
+admin --> UC3
+@enduml
