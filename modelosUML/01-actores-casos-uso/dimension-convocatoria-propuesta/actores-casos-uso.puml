@@ -1,0 +1,50 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+actor "UsuarioNoLogueado" as UsuarioNoLogueado
+actor "PersonalOTRI" as PersonalOTRI
+rectangle "Sistema de Gestión OTRI · Convocatorias y Propuestas" {
+  package "Acceso al Sistema" {
+    usecase "iniciarSesion()" as iniciarSesion
+    usecase "cerrarSesion()" as cerrarSesion
+  }
+  package "Gestión de Convocatorias" {
+    usecase "crearConvocatoria()" as crearConvocatoria
+    usecase "abrirConvocatoria()" as abrirConvocatoria
+    usecase "editarConvocatoria()" as editarConvocatoria
+  }
+  package "Gestión de Gestores de Propuesta" {
+    usecase "crearGestorDePropuesta()" as crearGestorDePropuesta
+    usecase "abrirGestorDePropuesta()" as abrirGestorDePropuesta
+    usecase "editarGestorDePropuesta()" as editarGestorDePropuesta
+  }
+  package "Gestión de Investigadores" {
+    usecase "crearInvestigador()" as crearInvestigador
+    usecase "abrirInvestigador()" as abrirInvestigador
+    usecase "editarInvestigador()" as editarInvestigador
+  }
+  package "Ciclo de Vida de la Propuesta" {
+    usecase "crearPropuesta()" as crearPropuesta
+    usecase "abrirPropuesta()" as abrirPropuesta
+    usecase "editarPropuesta()" as editarPropuesta
+    usecase "abrirPropuestas()" as abrirPropuestas
+    usecase "convertirAProyecto()" as convertirAProyecto
+  }
+}
+UsuarioNoLogueado --> iniciarSesion
+PersonalOTRI --> cerrarSesion
+PersonalOTRI --> crearConvocatoria
+PersonalOTRI --> abrirConvocatoria
+PersonalOTRI --> editarConvocatoria
+PersonalOTRI --> crearGestorDePropuesta
+PersonalOTRI --> abrirGestorDePropuesta
+PersonalOTRI --> editarGestorDePropuesta
+PersonalOTRI --> crearInvestigador
+PersonalOTRI --> abrirInvestigador
+PersonalOTRI --> editarInvestigador
+PersonalOTRI --> abrirPropuesta
+PersonalOTRI --> editarPropuesta
+PersonalOTRI --> crearPropuesta
+PersonalOTRI --> abrirPropuestas
+PersonalOTRI --> convertirAProyecto
