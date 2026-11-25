@@ -10,14 +10,14 @@
 ## Información del artefacto
 * **Proyecto:** 26-27-IdSw1-SDR · Gestión OTRI
 * **Fase RUP:** Inicio (Inception) / Modelo del Dominio
-* **Versión:** 1.0
-* **Estado:** Validado parcialmente
+* **Versión:** 1.1
+* **Estado:** Validado formalmente
 
 ---
 
 ## 1. Diagrama de Clases del Negocio
 
-Modela las entidades conceptuales del dominio de la OTRI, estructurando la relación entre convocatorias, propuestas, proyectos concedidos y los roles de gestión y evaluación.
+### 1.1. Diagrama de Clases
 
 <div align="center">
 
@@ -25,6 +25,17 @@ Modela las entidades conceptuales del dominio de la OTRI, estructurando la relac
 | :---: |
 | ![](/images/00-modelo-del-dominio/diagrama-de-clases.svg) |
 | *Fuente: [diagrama-de-clases.puml](/modelosUML/00-modelo-del-dominio/diagrama-de-clases.puml)* |
+
+</div>
+
+### 1.2. Diagrama de Clases Formal
+
+<div align="center">
+
+| Diagrama de Clases Formal |
+| :---: |
+| ![](/images/00-modelo-del-dominio/diagrama-de-clases-formal.svg) |
+| *Fuente: [diagrama-de-clases-formal.puml](/modelosUML/00-modelo-del-dominio/diagrama-de-clases-formal.puml)* |
 
 </div>
 
@@ -58,7 +69,9 @@ Modela el flujo de tramitación de los informes solicitados por organismos exter
 
 ---
 
-## 3. Glosario de Entidades
+## 3. Glosario
+
+### 3.1. Entidades del Dominio
 
 | Entidad | Definición de Negocio |
 | :--- | :--- |
@@ -66,5 +79,11 @@ Modela el flujo de tramitación de los informes solicitados por organismos exter
 | **`Proyecto`** | Propuesta formalmente concedida que cuenta con financiación, cronograma y equipo ejecutor. |
 | **`Convocatoria`** | Marco competitivo (regional, nacional o internacional) abierto por una entidad financiadora. |
 | **`EntidadFinanciera`** | Organismo externo que oferta fondos públicos o privados y evalúa las propuestas. |
-| **`Investigador`** | Personal docente e investigador (PDI) que justifica o ejecuta los proyectos. |
+| **`Investigador`** | Personal docente e investigador (PDI) que formaliza la postulación científica y ejecuta los proyectos concedidos. |
 | **`Informe`** | Documento estructurado emitido por la OTRI para justificaciones, auditorías o estadísticas. |
+
+### 3.2. Relaciones del Negocio
+
+| Relación | Entidades | Definición y Alcance |
+| :--- | :---: | :--- |
+| **`presenta y coordina`** | `Investigador` — `Propuesta` | Vincula al investigador con la propuesta. La **presentación** comprende la elaboración y justificación técnica, científica y presupuestaria de la propuesta, mientras que su posterior **coordinación** abarca la articulación del equipo investigador y el seguimiento del expediente durante su tramitación ante la OTRI. |
