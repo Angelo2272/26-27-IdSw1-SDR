@@ -5,15 +5,15 @@ state "En Elaboración" as Elaboracion
 state "En Revisión" as Revision
 state "Entregado" as Entregado
 
-[*] --> Solicitado
+[*] --> Solicitado : recibe solicitud
 
-Solicitado --> Elaboracion : recibe solicitud
+Solicitado --> Elaboracion : iniciar elaboración
 
 Elaboracion --> Revision : completar informe
 
 Revision --> Elaboracion : rechazar informe
 
-Revision --> Entregado : validar informe
+Revision --> Entregado : validar y entregar informe
 
 Entregado --> [*]
 
