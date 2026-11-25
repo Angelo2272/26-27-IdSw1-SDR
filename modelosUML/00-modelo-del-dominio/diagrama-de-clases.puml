@@ -32,7 +32,7 @@ OrganismoExterno <|-- EntidadFinanciera
 OrganismoExterno <|-- OrganismoInstitucional
 
 EntidadFinanciera -- Convocatoria : abre >
-Propuesta -- Proyecto: se convierte > 
+Propuesta -- Proyecto: se convierte en >
 Convocatoria -- Propuesta: recibe >
 Proyecto -d- Auditor: revisa <
 EntidadFinanciera -- Proyecto : financia >
@@ -41,8 +41,9 @@ Propuesta -d- Investigador : justifica y coordina <
 Proyecto -d- Investigador: ejecuta <
 
 OrganismoExterno -d- Informe: solicita >
+GestorDePropuesta -- Informe : elabora >
+GestorDeProyecto -- Informe : elabora >
 Informe -- Propuesta : refleja datos de >
 Informe -- Proyecto : refleja datos de >
-
 
 @enduml
