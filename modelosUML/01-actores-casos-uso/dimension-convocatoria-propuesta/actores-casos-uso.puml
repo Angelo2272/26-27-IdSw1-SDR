@@ -13,23 +13,27 @@ rectangle "Sistema de Gestión OTRI · Convocatorias y Propuestas" {
     usecase "crearConvocatoria()" as crearConvocatoria
     usecase "abrirConvocatoria()" as abrirConvocatoria
     usecase "editarConvocatoria()" as editarConvocatoria
+    usecase "eliminarConvocatoria()" as eliminarConvocatoria
   }
   package "Gestión de Gestores de Propuesta" {
     usecase "crearGestorDePropuesta()" as crearGestorDePropuesta
     usecase "abrirGestorDePropuesta()" as abrirGestorDePropuesta
     usecase "editarGestorDePropuesta()" as editarGestorDePropuesta
+    usecase "eliminarGestorDePropuesta()" as eliminarGestorDePropuesta  
   }
   package "Gestión de Investigadores" {
     usecase "crearInvestigador()" as crearInvestigador
     usecase "abrirInvestigador()" as abrirInvestigador
     usecase "editarInvestigador()" as editarInvestigador
+    usecase "eliminarInvestigador()" as eliminarInvestigador
+    usecase "asignarProyecto()" as asignarProyecto
   }
   package "Ciclo de Vida de la Propuesta" {
     usecase "crearPropuesta()" as crearPropuesta
     usecase "abrirPropuesta()" as abrirPropuesta
     usecase "editarPropuesta()" as editarPropuesta
     usecase "abrirPropuestas()" as abrirPropuestas
-    usecase "convertirAProyecto()" as convertirAProyecto
+    usecase "concederPropuesta()" as concederPropuesta
   }
 }
 UsuarioNoLogueado --> iniciarSesion
@@ -37,14 +41,18 @@ PersonalOTRI --> cerrarSesion
 PersonalOTRI --> crearConvocatoria
 PersonalOTRI --> abrirConvocatoria
 PersonalOTRI --> editarConvocatoria
+PersonalOTRI --> eliminarConvocatoria
 PersonalOTRI --> crearGestorDePropuesta
 PersonalOTRI --> abrirGestorDePropuesta
 PersonalOTRI --> editarGestorDePropuesta
+PersonalOTRI --> eliminarGestorDePropuesta
 PersonalOTRI --> crearInvestigador
 PersonalOTRI --> abrirInvestigador
 PersonalOTRI --> editarInvestigador
+PersonalOTRI --> eliminarInvestigador
+PersonalOTRI --> asignarProyecto
 PersonalOTRI --> abrirPropuesta
 PersonalOTRI --> editarPropuesta
 PersonalOTRI --> crearPropuesta
 PersonalOTRI --> abrirPropuestas
-PersonalOTRI --> convertirAProyecto
+PersonalOTRI --> concederPropuesta
