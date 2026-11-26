@@ -2,28 +2,101 @@
 
 hide circle
 hide empty members
+skinparam linetype polyline
 
-class Convocatoria
+class Convocatoria {
+  codigoResolucion
+  nombre
+  promotor
+  ambito
+  año
+  fechaConcesion
+  fechaLimite
+}
 
-class Propuesta
+class Propuesta {
+  codigo
+  titulo
+  tituloOtroIdioma
+  descripcion
+  tipo
+  tipoContrato
+  areaTematica
+  palabrasClave
+  programasDoctorado
+  curso
+  pais
+  fechaEntrega
+  fechaResolucion
+  /fechaClave
+  añoEntrega
+  estado
+  seguimientoExpediente
+  lider
+  socios
+  presupuestoTotal
+  presupuestoPropio
+  subvencionPrevista
+  prestamoPrevisto
+  observaciones
+}
 
-class EntidadFinanciera
+class EntidadFinanciera {
+}
 
-class OrganismoExterno
+class OrganismoExterno {
+  nombre
+}
 
-class OrganismoInstitucional
+class OrganismoInstitucional {
+}
 
-class Informe
+class Informe {
+  codigo
+  titulo
+  tipo
+  formato
+  fechaSolicitud
+  fechaEmision
+  periodoCubierto
+  estado
+  contenidoAdicional
+}
 
-class Investigador
+class Investigador {
+  nombre
+  apellidos
+rol
+}
 
-class Auditor
+class Auditor {
+  nombre
+  apellidos
+}
 
-class Proyecto
+class Proyecto {
+  codigo
+  titulo
+  fechaInicio
+  fechaFin
+  estado
+  presupuestoConcedido
+  subvencionObtenida
+  prestamoObtenido
+  actividadesPropias
+  observaciones
+}
 
-class GestorDeProyecto
+class GestorDeProyecto {
+  nombre
+  apellidos
+}
 
-class GestorDePropuesta
+class GestorDePropuesta {
+  nombre
+  apellidos
+
+}
 
 Propuesta "0..*" -d- "1" GestorDePropuesta : expone <
 Proyecto "0..*" -d- "1" GestorDeProyecto : coordina <
@@ -31,18 +104,17 @@ Proyecto "0..*" -d- "1" GestorDeProyecto : coordina <
 OrganismoExterno <|-- EntidadFinanciera
 OrganismoExterno <|-- OrganismoInstitucional
 
-EntidadFinanciera "1" *-- "1..*" Convocatoria : abre 
-Propuesta "1" --> "0..1" Proyecto: se convierte 
-Convocatoria "1" o-- "0..*" Propuesta: recibe 
-Proyecto "0..*" <.d. "0..*" Auditor: revisa 
+EntidadFinanciera "1" *-- "1..*" Convocatoria : abre
+Propuesta "1" --> "0..1" Proyecto : se convierte
+Convocatoria "1" o-- "0..*" Propuesta : recibe
+Proyecto "0..*" <.d. "0..*" Auditor : revisa
 EntidadFinanciera "1..*" -- "0..*" Proyecto : financia >
 
 Propuesta "0..*" -d- "1..*" Investigador : presenta y coordina <
-Proyecto "0..*" -d- "1..*" Investigador: ejecuta <
+Proyecto "0..*" -d- "1..*" Investigador : ejecuta <
 
-OrganismoExterno "1" -d- "0..*" Informe: solicita > 
-Informe "0..*" ..> "0..*" Propuesta : refleja datos de 
-Informe "0..*" ..> "0..*" Proyecto : refleja datos de 
-
+OrganismoExterno "1" -d- "0..*" Informe : solicita >
+Informe "0..*" ..> "0..*" Propuesta : refleja datos de
+Informe "0..*" ..> "0..*" Proyecto : refleja datos de
 
 @enduml
