@@ -1,23 +1,39 @@
 @startuml
 
-    left to right direction
+left to right direction
 
-    actor "Administrador" as admin
+actor "Administrador" as admin
 
-    usecase "abrirInformes()" as UC1
-    usecase "abrirInforme()" as UC2
-    usecase "generarInforme()" as UC3
-    usecase "editarInforme()" as UC4
-    usecase "eliminarInforme()" as UC5
-    usecase "descargarInforme()" as UC6
-    usecase "filtrarRegistros()" as UC7
+package "Gestión de Organismos Externos" {
+    usecase crearOrganismoExterno as "crearOrganismoExterno()"
+    usecase abrirOrganismoExterno as "abrirOrganismoExterno()"
+    usecase abrirOrganismosExternos as "abrirOrganismosExternos()"
+    usecase editarOrganismoExterno as "editarOrganismoExterno()"
+    usecase eliminarOrganismoExterno as "eliminarOrganismoExterno()"
+}
 
-    admin --> UC1
-    admin --> UC2
-    admin --> UC3
-    admin --> UC4
-    admin --> UC5
-    admin --> UC6
-    admin --> UC7
+package "Gestión de Informes" {
+    usecase abrirInformes as "abrirInformes()"
+    usecase abrirInforme as "abrirInforme()"
+    usecase generarInforme as "generarInforme()"
+    usecase editarInforme as "editarInforme()"
+    usecase eliminarInforme as "eliminarInforme()"
+    usecase descargarInforme as "descargarInforme()"
+    usecase filtrarRegistros as "filtrarRegistros()"
+}
+
+generarOrganismoExterno <-- admin
+abrirOrganismoExterno <-- admin
+abrirOrganismosExternos <-- admin
+editarOrganismoExterno <-- admin
+eliminarOrganismoExterno <-- admin
+
+admin --> abrirInformes
+admin --> abrirInforme
+admin --> generarInforme
+admin --> editarInforme
+admin --> eliminarInforme
+admin --> descargarInforme
+admin --> filtrarRegistros
 
 @enduml
