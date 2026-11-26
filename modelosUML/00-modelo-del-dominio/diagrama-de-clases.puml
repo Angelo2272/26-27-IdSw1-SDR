@@ -1,6 +1,6 @@
-@startuml diagrama-de-clases
+@startuml diagrama-de-clases 
 
-hide circle
+hide circle 
 hide empty members
 
 class Convocatoria
@@ -9,13 +9,13 @@ class Propuesta
 
 class EntidadFinanciera
 
-class OrganismoExterno
+class OrganismoExterno 
 
 class OrganismoInstitucional
 
 class Informe
 
-class Investigador
+class Investigador 
 
 class Auditor
 
@@ -25,8 +25,7 @@ class GestorDeProyecto
 
 class GestorDePropuesta
 
-Propuesta -d- GestorDePropuesta : expone <
-Proyecto -d- GestorDeProyecto : coordina <
+class Personal 
 
 OrganismoExterno <|-- EntidadFinanciera
 OrganismoExterno <|-- OrganismoInstitucional
@@ -34,15 +33,21 @@ OrganismoExterno <|-- OrganismoInstitucional
 EntidadFinanciera -- Convocatoria : abre >
 Propuesta -- Proyecto: se convierte > 
 Convocatoria -- Propuesta: recibe >
-Proyecto -d- Auditor: revisa <
-EntidadFinanciera -- Proyecto : financia >
+EntidadFinanciera -- Proyecto : financia > 
 
-Propuesta -d- Investigador : presenta y coordina <
-Proyecto -d- Investigador: ejecuta <
+Personal <|-- Investigador
+Personal <|-- Auditor
+Personal <|-- GestorDePropuesta
+Personal <|-- GestorDeProyecto 
+
+Propuesta -u- GestorDePropuesta : expone <
+Proyecto -u- GestorDeProyecto : coordina < 
+Proyecto -u- Auditor: revisa <
+Propuesta -u- Investigador : presenta y coordina < 
+Proyecto -u- Investigador: ejecuta <
 
 OrganismoExterno -d- Informe: solicita >
 Informe -- Propuesta : refleja datos de >
 Informe -- Proyecto : refleja datos de >
-
 
 @enduml
