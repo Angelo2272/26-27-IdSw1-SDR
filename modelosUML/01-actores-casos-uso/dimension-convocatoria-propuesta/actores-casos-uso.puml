@@ -1,54 +1,45 @@
 @startuml
 left to right direction
 
-skinparam packageStyle rectangle
-skinparam shadowing false
+actor UsuarioNoLogueado
+actor Administrador
 
-actor "UsuarioNoLogueado" as Usuario
-actor "PersonalOTRI" as Personal
-
-rectangle "Sistema de Gestión OTRI" {
-
-    package "Acceso al Sistema" {
-        usecase "iniciarSesion()" as UC1
-        usecase "cerrarSesion()" as UC2
-    }
-
-    package "Gestión de Propuestas" {
-        usecase "abrirPropuestas()" as UC3
-        usecase "crearPropuesta()" as UC4
-        usecase "editarPropuesta()" as UC5
-        usecase "abrirHistorial()" as UC6
-        usecase "asignarPersonal()" as UC7
-        usecase "desasignarPersonal()" as UC8
-        usecase "convertirAProyecto()" as UC9
-    }
-
-    package "Gestión de Convocatorias" {
-        usecase "abrirConvocatorias()" as UC10
-        usecase "crearConvocatoria()" as UC11
-        usecase "editarConvocatoria()" as UC12
-    }
+package "Gestión de Propuestas" {
+  usecase "abrirPropuestas()" as UC_AbrirProp
+  usecase "crearPropuesta()" as UC_CrearProp
+  usecase "editarPropuesta()" as UC_EditarProp
+  usecase "abrirHistorial()" as UC_AbrirHist
+  usecase "asignarPersonal()" as UC_Asignar
+  usecase "desasignarPersonal()" as UC_Desasignar
+  usecase "convertirAProyecto()" as UC_Convertir
 }
 
-' Acceso al sistema
-Usuario --> UC1
+package "Acceso al Sistema" {
+  usecase "iniciarSesion()" as UC_Iniciar
+  usecase "cerrarSesion()" as UC_Cerrar
+}
 
-' Personal OTRI
-Personal --> UC2
+package "Gestión de Convocatorias" {
+  usecase "abrirConvocatorias()" as UC_AbrirConv
+  usecase "crearConvocatoria()" as UC_CrearConv
+  usecase "editarConvocatoria()" as UC_EditarConv
+}
 
-' Gestión de propuestas
-Personal --> UC3
-Personal --> UC4
-Personal --> UC5
-Personal --> UC6
-Personal --> UC7
-Personal --> UC8
-Personal --> UC9
+' Izquierda del actor (con left to right direction, <-- coloca el destino a la izquierda)
+UC_AbrirProp <-- Administrador
+UC_CrearProp <-- Administrador
+UC_EditarProp <-- Administrador
+UC_AbrirHist <-- Administrador
+UC_Asignar <-- Administrador
+UC_Desasignar <-- Administrador
+UC_Convertir <-- Administrador
 
-' Gestión de convocatorias
-Personal --> UC10
-Personal --> UC11
-Personal --> UC12
+' Derecha de los actores (--> coloca el destino a la derecha)
+UsuarioNoLogueado --> UC_Iniciar
+Administrador --> UC_Cerrar
+
+Administrador --> UC_AbrirConv
+Administrador --> UC_CrearConv
+Administrador --> UC_EditarConv
 
 @enduml
