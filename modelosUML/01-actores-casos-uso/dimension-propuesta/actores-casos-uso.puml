@@ -38,7 +38,6 @@ package "Gestión de Persona" {
   usecase "editarPersona()" as UC_EditarPers
 }
 
-' Columna izquierda: Gestión de Propuestas (10 casos de uso)
 UC_AbrirProp <-- Administrador
 UC_AbrirProps <-- Administrador
 UC_CrearProp <-- Administrador
@@ -50,7 +49,6 @@ UC_Descartar <-- Administrador
 UC_Rechazar <-- Administrador
 UC_Entregar <-- Administrador
 
-' Columna derecha: Acceso al Sistema, Gestión de Convocatorias y Gestión de Persona (10 casos de uso)
 UsuarioNoLogueado --> UC_Iniciar
 Administrador --> UC_Cerrar
 
