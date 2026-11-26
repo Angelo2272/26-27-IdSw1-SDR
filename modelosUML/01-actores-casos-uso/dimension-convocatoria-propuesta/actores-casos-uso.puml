@@ -1,58 +1,54 @@
 @startuml
 left to right direction
+
 skinparam packageStyle rectangle
 skinparam shadowing false
-actor "UsuarioNoLogueado" as UsuarioNoLogueado
-actor "PersonalOTRI" as PersonalOTRI
-rectangle "Sistema de Gestión OTRI · Convocatorias y Propuestas" {
-  package "Acceso al Sistema" {
-    usecase "iniciarSesion()" as iniciarSesion
-    usecase "cerrarSesion()" as cerrarSesion
-  }
-  package "Gestión de Convocatorias" {
-    usecase "crearConvocatoria()" as crearConvocatoria
-    usecase "abrirConvocatoria()" as abrirConvocatoria
-    usecase "editarConvocatoria()" as editarConvocatoria
-    usecase "eliminarConvocatoria()" as eliminarConvocatoria
-  }
-  package "Gestión de Gestores de Propuesta" {
-    usecase "crearGestorDePropuesta()" as crearGestorDePropuesta
-    usecase "abrirGestorDePropuesta()" as abrirGestorDePropuesta
-    usecase "editarGestorDePropuesta()" as editarGestorDePropuesta
-    usecase "eliminarGestorDePropuesta()" as eliminarGestorDePropuesta  
-  }
-  package "Gestión de Investigadores" {
-    usecase "crearInvestigador()" as crearInvestigador
-    usecase "abrirInvestigador()" as abrirInvestigador
-    usecase "editarInvestigador()" as editarInvestigador
-    usecase "eliminarInvestigador()" as eliminarInvestigador
-    usecase "asignarProyecto()" as asignarProyecto
-  }
-  package "Ciclo de Vida de la Propuesta" {
-    usecase "crearPropuesta()" as crearPropuesta
-    usecase "abrirPropuesta()" as abrirPropuesta
-    usecase "editarPropuesta()" as editarPropuesta
-    usecase "abrirPropuestas()" as abrirPropuestas
-    usecase "concederPropuesta()" as concederPropuesta
-  }
+
+actor "UsuarioNoLogueado" as Usuario
+actor "PersonalOTRI" as Personal
+
+rectangle "Sistema de Gestión OTRI" {
+
+    package "Acceso al Sistema" {
+        usecase "iniciarSesion()" as UC1
+        usecase "cerrarSesion()" as UC2
+    }
+
+    package "Gestión de Propuestas" {
+        usecase "abrirPropuestas()" as UC3
+        usecase "crearPropuesta()" as UC4
+        usecase "editarPropuesta()" as UC5
+        usecase "abrirHistorial()" as UC6
+        usecase "asignarPersonal()" as UC7
+        usecase "desasignarPersonal()" as UC8
+        usecase "convertirAProyecto()" as UC9
+    }
+
+    package "Gestión de Convocatorias" {
+        usecase "abrirConvocatorias()" as UC10
+        usecase "crearConvocatoria()" as UC11
+        usecase "editarConvocatoria()" as UC12
+    }
 }
-UsuarioNoLogueado --> iniciarSesion
-PersonalOTRI --> cerrarSesion
-PersonalOTRI --> crearConvocatoria
-PersonalOTRI --> abrirConvocatoria
-PersonalOTRI --> editarConvocatoria
-PersonalOTRI --> eliminarConvocatoria
-PersonalOTRI --> crearGestorDePropuesta
-PersonalOTRI --> abrirGestorDePropuesta
-PersonalOTRI --> editarGestorDePropuesta
-PersonalOTRI --> eliminarGestorDePropuesta
-PersonalOTRI --> crearInvestigador
-PersonalOTRI --> abrirInvestigador
-PersonalOTRI --> editarInvestigador
-PersonalOTRI --> eliminarInvestigador
-PersonalOTRI --> asignarProyecto
-PersonalOTRI --> abrirPropuesta
-PersonalOTRI --> editarPropuesta
-PersonalOTRI --> crearPropuesta
-PersonalOTRI --> abrirPropuestas
-PersonalOTRI --> concederPropuesta
+
+' Acceso al sistema
+Usuario --> UC1
+
+' Personal OTRI
+Personal --> UC2
+
+' Gestión de propuestas
+Personal --> UC3
+Personal --> UC4
+Personal --> UC5
+Personal --> UC6
+Personal --> UC7
+Personal --> UC8
+Personal --> UC9
+
+' Gestión de convocatorias
+Personal --> UC10
+Personal --> UC11
+Personal --> UC12
+
+@enduml
