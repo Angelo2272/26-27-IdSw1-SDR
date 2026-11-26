@@ -42,21 +42,13 @@ class Propuesta {
 }
 
 class EntidadFinanciera {
-  naturaleza
-  tipoFinanciacion
 }
 
 class OrganismoExterno {
   nombre
-  siglas
-  ambito
-  pais
-  correo
 }
 
 class OrganismoInstitucional {
-  tipoOrganismo
-  competencia
 }
 
 class Informe {
@@ -74,18 +66,12 @@ class Informe {
 class Investigador {
   nombre
   apellidos
-  correo
-  orcid
-  departamento
-  categoria
+rol
 }
 
 class Auditor {
   nombre
   apellidos
-  correo
-  entidadAuditora
-  acreditacion
 }
 
 class Proyecto {
@@ -104,17 +90,12 @@ class Proyecto {
 class GestorDeProyecto {
   nombre
   apellidos
-  correo
-  telefono
-  departamento
 }
 
 class GestorDePropuesta {
   nombre
   apellidos
-  correo
-  telefono
-  departamento
+
 }
 
 Propuesta "0..*" -d- "1" GestorDePropuesta : expone <
