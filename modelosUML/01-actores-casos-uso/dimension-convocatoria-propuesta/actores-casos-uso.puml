@@ -1,17 +1,22 @@
 @startuml
 left to right direction
+skinparam ranksep 60
+skinparam nodesep 12
 
 actor UsuarioNoLogueado
 actor Administrador
 
 package "Gestión de Propuestas" {
-  usecase "abrirPropuestas()" as UC_AbrirProp
+  usecase "abrirPropuesta()" as UC_AbrirProp
+  usecase "abrirPropuestas()" as UC_AbrirProps
   usecase "crearPropuesta()" as UC_CrearProp
   usecase "editarPropuesta()" as UC_EditarProp
-  usecase "abrirHistorial()" as UC_AbrirHist
   usecase "asignarPersonal()" as UC_Asignar
   usecase "desasignarPersonal()" as UC_Desasignar
-  usecase "convertirAProyecto()" as UC_Convertir
+  usecase "concederPropuesta()" as UC_Conceder
+  usecase "descartarPropuesta()" as UC_Descartar
+  usecase "rechazarPropuesta()" as UC_Rechazar
+  usecase "entregarPropuesta()" as UC_Entregar
 }
 
 package "Acceso al Sistema" {
@@ -20,26 +25,43 @@ package "Acceso al Sistema" {
 }
 
 package "Gestión de Convocatorias" {
-  usecase "abrirConvocatorias()" as UC_AbrirConv
+  usecase "abrirConvocatoria()" as UC_AbrirConv
+  usecase "abrirConvocatorias()" as UC_AbrirConvs
   usecase "crearConvocatoria()" as UC_CrearConv
   usecase "editarConvocatoria()" as UC_EditarConv
 }
 
-' Izquierda del actor (con left to right direction, <-- coloca el destino a la izquierda)
+package "Gestión de Persona" {
+  usecase "abrirPersona()" as UC_AbrirPers
+  usecase "abrirPersonas()" as UC_AbrirPerss
+  usecase "crearPersona()" as UC_CrearPers
+  usecase "editarPersona()" as UC_EditarPers
+}
+
+' Columna izquierda: Gestión de Propuestas (10 casos de uso)
 UC_AbrirProp <-- Administrador
+UC_AbrirProps <-- Administrador
 UC_CrearProp <-- Administrador
 UC_EditarProp <-- Administrador
-UC_AbrirHist <-- Administrador
 UC_Asignar <-- Administrador
 UC_Desasignar <-- Administrador
-UC_Convertir <-- Administrador
+UC_Conceder <-- Administrador
+UC_Descartar <-- Administrador
+UC_Rechazar <-- Administrador
+UC_Entregar <-- Administrador
 
-' Derecha de los actores (--> coloca el destino a la derecha)
+' Columna derecha: Acceso al Sistema, Gestión de Convocatorias y Gestión de Persona (10 casos de uso)
 UsuarioNoLogueado --> UC_Iniciar
 Administrador --> UC_Cerrar
 
 Administrador --> UC_AbrirConv
+Administrador --> UC_AbrirConvs
 Administrador --> UC_CrearConv
 Administrador --> UC_EditarConv
+
+Administrador --> UC_AbrirPers
+Administrador --> UC_AbrirPerss
+Administrador --> UC_CrearPers
+Administrador --> UC_EditarPers
 
 @enduml
