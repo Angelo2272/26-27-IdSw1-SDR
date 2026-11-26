@@ -64,15 +64,10 @@ class Informe {
 }
 
 class Investigador {
-  nombre
-  apellidos
-rol
+  rol
 }
 
-class Auditor {
-  nombre
-  apellidos
-}
+class Auditor
 
 class Proyecto {
   codigo
@@ -87,19 +82,26 @@ class Proyecto {
   observaciones
 }
 
-class GestorDeProyecto {
+class GestorDeProyecto
+
+class GestorDePropuesta
+
+class Personal {
   nombre
   apellidos
+  correo
+  genero
+  fechaDeNacimiento 
+  estado
 }
 
-class GestorDePropuesta {
-  nombre
-  apellidos
+Personal <|-d- GestorDePropuesta
+Personal <|-d- GestorDeProyecto
+Personal <|-d- Auditor
+Personal <|-d- Investigador
 
-}
-
-Propuesta "0..*" -d- "1" GestorDePropuesta : expone <
-Proyecto "0..*" -d- "1" GestorDeProyecto : coordina <
+Propuesta "0..*" -u- "1" GestorDePropuesta : expone <
+Proyecto "0..*" -u- "1" GestorDeProyecto : coordina <
 
 OrganismoExterno <|-- EntidadFinanciera
 OrganismoExterno <|-- OrganismoInstitucional
@@ -107,11 +109,11 @@ OrganismoExterno <|-- OrganismoInstitucional
 EntidadFinanciera "1" *-- "1..*" Convocatoria : abre
 Propuesta "1" --> "0..1" Proyecto : se convierte
 Convocatoria "1" o-- "0..*" Propuesta : recibe
-Proyecto "0..*" <.d. "0..*" Auditor : revisa
-EntidadFinanciera "1..*" -- "0..*" Proyecto : financia >
+Proyecto "0..*" <.u. "0..*" Auditor : revisa
+EntidadFinanciera "1..*" -d- "0..*" Proyecto : financia >
 
-Propuesta "0..*" -d- "1..*" Investigador : presenta y coordina <
-Proyecto "0..*" -d- "1..*" Investigador : ejecuta <
+Propuesta "0..*" -u- "1..*" Investigador : presenta y coordina <
+Proyecto "0..*" -u- "1..*" Investigador : ejecuta <
 
 OrganismoExterno "1" -d- "0..*" Informe : solicita >
 Informe "0..*" ..> "0..*" Propuesta : refleja datos de
