@@ -17,6 +17,7 @@ package "Gestión de Propuestas" {
   usecase "descartarPropuesta()" as UC_Descartar
   usecase "rechazarPropuesta()" as UC_Rechazar
   usecase "entregarPropuesta()" as UC_Entregar
+  usecase "eliminarPropuesta()" as UC_Eliminar
 }
 
 package "Acceso al Sistema" {
@@ -29,6 +30,7 @@ package "Gestión de Convocatorias" {
   usecase "abrirConvocatorias()" as UC_AbrirConvs
   usecase "crearConvocatoria()" as UC_CrearConv
   usecase "editarConvocatoria()" as UC_EditarConv
+  usecase "eliminarConvocatoria()" as UC_EliminarConv
 }
 
 package "Gestión de Persona" {
@@ -36,6 +38,7 @@ package "Gestión de Persona" {
   usecase "abrirPersonas()" as UC_AbrirPerss
   usecase "crearPersona()" as UC_CrearPers
   usecase "editarPersona()" as UC_EditarPers
+  usecase "eliminarPersona()" as UC_EliminarPers
 }
 
 UC_AbrirProp <-- Administrador
@@ -48,6 +51,7 @@ UC_Conceder <-- Administrador
 UC_Descartar <-- Administrador
 UC_Rechazar <-- Administrador
 UC_Entregar <-- Administrador
+UC_Eliminar <-- Administrador
 
 UsuarioNoLogueado --> UC_Iniciar
 Administrador --> UC_Cerrar
@@ -56,10 +60,12 @@ Administrador --> UC_AbrirConv
 Administrador --> UC_AbrirConvs
 Administrador --> UC_CrearConv
 Administrador --> UC_EditarConv
+Administrador --> UC_EliminarConv
 
 Administrador --> UC_AbrirPers
 Administrador --> UC_AbrirPerss
 Administrador --> UC_CrearPers
 Administrador --> UC_EditarPers
+Administrador --> UC_EliminarPers
 
 @enduml
