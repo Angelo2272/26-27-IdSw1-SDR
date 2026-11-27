@@ -1,0 +1,41 @@
+@startuml
+
+left to right direction
+skinparam ranksep 60
+skinparam nodesep 12
+
+actor "Administrador" as admin
+
+package "Gestión de Organismos Externos" {
+    usecase crearOrganismoExterno as "crearOrganismoExterno()"
+    usecase abrirOrganismoExterno as "abrirOrganismoExterno()"
+    usecase abrirOrganismosExternos as "abrirOrganismosExternos()"
+    usecase editarOrganismoExterno as "editarOrganismoExterno()"
+    usecase eliminarOrganismoExterno as "eliminarOrganismoExterno()"
+}
+
+package "Gestión de Informes" {
+    usecase abrirInformes as "abrirInformes()"
+    usecase abrirInforme as "abrirInforme()"
+    usecase generarInforme as "generarInforme()"
+    usecase editarInforme as "editarInforme()"
+    usecase eliminarInforme as "eliminarInforme()"
+    usecase descargarInforme as "descargarInforme()"
+    usecase filtrarRegistros as "filtrarRegistros()"
+}
+
+crearOrganismoExterno <-- admin
+abrirOrganismoExterno <-- admin
+abrirOrganismosExternos <-- admin
+editarOrganismoExterno <-- admin
+eliminarOrganismoExterno <-- admin
+
+admin --> abrirInformes
+admin --> abrirInforme
+admin --> generarInforme
+admin --> editarInforme
+admin --> eliminarInforme
+admin --> descargarInforme
+admin --> filtrarRegistros
+
+@enduml

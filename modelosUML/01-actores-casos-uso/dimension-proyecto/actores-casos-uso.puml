@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+
+actor Administrador as admin
+
+package "Gestión de Proyectos"{
+  usecase "abrirProyecto()" as abrirProyecto
+  usecase "abrirProyectos()" as abrirProyectos
+  usecase "editarProyecto()" as editarProyecto
+  usecase "finalizarProyecto()" as finalizarProyecto
+  usecase "abrirHistorial()" as abrirHistorial
+  usecase "asignarPersonal()" as asignarPersonal
+  usecase "desasignarPersonal()" as desasignarPersonal
+}
+
+admin --> abrirProyecto
+admin --> abrirProyectos
+admin --> editarProyecto
+admin --> finalizarProyecto
+admin --> abrirHistorial
+admin --> asignarPersonal
+admin --> desasignarPersonal
+
+@enduml
