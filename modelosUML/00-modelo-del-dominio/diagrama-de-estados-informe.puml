@@ -1,9 +1,9 @@
 @startuml
 
 state "Solicitado" as Solicitado
-state "PendienteAsignación" as PendienteAsignacion
-state "EnElaboración" as EnElaboracion
-state "EnRevisión" as EnRevision
+state "Pendiente asignación" as PendienteAsignacion
+state "En elaboración" as EnElaboracion
+state "En revisión" as EnRevision
 state "Entregado" as Entregado
 
 [*] --> Solicitado
@@ -16,7 +16,7 @@ EnElaboracion --> EnRevision : completar informe
 
 EnRevision --> EnElaboracion : rechazar informe
 
-EnRevision --> Entregado : validar informe
+EnRevision --> Entregado : validar informe y entregar informe
 
 Entregado --> [*]
 
