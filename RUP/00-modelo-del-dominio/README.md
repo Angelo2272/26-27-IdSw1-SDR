@@ -44,7 +44,7 @@
 ## 2. Ciclos de Vida y Diagramas de Estados
 
 ### 2.1. Estados de la Propuesta
-Modela las transiciones que experimenta una propuesta desde su registro preliminar (`EXPRESION_DE_INTERES`), pasando por su entrega formal a convocatoria, hasta su resolución (`OBTENIDO`, `RECHAZADO`, `DESCARTADO`). Al ser aprobada (`OBTENIDO`), pasa a considerarse Proyecto.
+Modela las transiciones que experimenta una propuesta desde su registro preliminar (`Expresión de interés`), pasando por su entrega formal a convocatoria, hasta su resolución (`Obtenido`, `Rechazado`, `Descartado`, `No aceptado`). Al ser aprobada (`Obtenido`), pasa a considerarse Proyecto.
 
 <div align="center">
 
@@ -56,7 +56,7 @@ Modela las transiciones que experimenta una propuesta desde su registro prelimin
 </div>
 
 ### 2.2. Estados del Informe
-Modela el flujo de tramitación de los informes solicitados por organismos externos de acreditación y estadística (`Solicitado` $\rightarrow$ `En Elaboración` $\rightarrow$ `En Revisión` $\rightarrow$ `Entregado`).
+Modela el flujo de tramitación de los informes solicitados por organismos externos de acreditación y estadística (`Solicitado` $\rightarrow$ `En elaboración` $\rightarrow$ `En revisión` $\rightarrow$ `Entregado`).
 
 <div align="center">
 
@@ -64,6 +64,18 @@ Modela el flujo de tramitación de los informes solicitados por organismos exter
 | :---: |
 | ![](/images/00-modelo-del-dominio/diagrama-de-estados-informe.svg) |
 | *Fuente: [diagrama-de-estados-informe.puml](/modelosUML/00-modelo-del-dominio/diagrama-de-estados-informe.puml)* |
+
+</div>
+
+### 2.3. Estados del Proyecto
+Modela el ciclo de vida de un proyecto desde la aprobación de la propuesta hasta su cierre definitivo tras superar la revisión correspondiente (`En ejecución` $\rightarrow$ `En revisión` $\rightarrow$ `Completado`).
+
+<div align="center">
+
+| Diagrama de Estados — Proyecto |
+| :---: |
+| ![](/images/00-modelo-del-dominio/diagrama-de-estados-proyecto.svg) |
+| *Fuente: [diagrama-de-estados-proyecto.puml](/modelosUML/00-modelo-del-dominio/diagrama-de-estados-proyecto.puml)* |
 
 </div>
 

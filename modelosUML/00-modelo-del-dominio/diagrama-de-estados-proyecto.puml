@@ -1,0 +1,15 @@
+@startuml
+
+state "En ejecución" as EnEjecucion
+state "En revisión" as EnRevision
+state "Completado" as Completado
+
+[*] --> EnEjecucion : Propuesta aprobada
+
+EnEjecucion --> EnRevision : Iniciar revisión
+EnRevision --> EnEjecucion : Solicitar correcciones
+EnRevision --> Completado : Revisión satisfactoria
+
+Completado --> [*]
+
+@enduml
