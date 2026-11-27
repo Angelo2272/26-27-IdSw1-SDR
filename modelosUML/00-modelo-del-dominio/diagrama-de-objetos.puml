@@ -1,0 +1,144 @@
+@startuml
+left to right direction
+object "entidad1 : EntidadFinanciera" as entidad {
+  nombre = "SODERCAN"
+}
+
+object "convocatoria1 : Convocatoria" as convocatoria {
+  codigoResolucion = "SOD/EC/20/26"
+  nombre = "Convocatoria de fomento de la economía circular"
+  promotor = "SODERCAN, S.A."
+  ambito = "Regional"
+  año = 2026
+  fechaConcesion = "15/12/2026"
+  fechaLimite = "10/08/2026"
+}
+
+object "propuesta1 : Propuesta" as propuesta {
+  codigo = "2026-022"
+  titulo = "Proteína Circular (PROCI)"
+  tituloOtroIdioma = "Circular Protein (PROCI)"
+  descripcion = "Investigación sobre la valorización de proteínas a partir de subproductos agroalimentarios"
+  tipo = "INV"
+  tipoContrato = "CC"
+  areaTematica = "AGROALIMENTACIÓN"
+  palabrasClave = "proteína, galleta, bizcocho, valorización"
+  programasDoctorado = "Doctorado en Ingeniería"
+  curso = "2026-2027"
+  pais = "España"
+  fechaEntrega = "07/08/2026"
+  fechaResolucion = "15/12/2026"
+  fechaClave = "07/08/2026"
+  añoEntrega = 2026
+  estado = "OBTENIDO"
+  seguimientoExpediente = "Proyecto número 7"
+  lider = "CITICAN"
+  socios = "UNEATLANTICO"
+  presupuestoTotal = 100000
+  presupuestoPropio = 100000
+  subvencionPrevista = 50000
+  prestamoPrevisto = 0
+  observaciones = "Propuesta presentada a la convocatoria"
+}
+
+object "proyecto1 : Proyecto" as proyecto {
+  codigo = "2026-022"
+  titulo = "Proteína Circular (PROCI)"
+  fechaInicio = "01/02/2027"
+  fechaFin = "01/02/2028"
+  estado = "En ejecución"
+  presupuestoConcedido = 100000
+  subvencionObtenida = 50000
+  prestamoObtenido = 0
+  actividadesPropias = "Investigación"
+  observaciones = "Proyecto de investigación concedido"
+}
+
+object "gestorProp1 : GestorDePropuesta" as gestorProp {
+  nombre = "Laura"
+  apellidos = "Martínez García"
+  correo = "laura.martinez@universidad.es"
+  genero = "Femenino"
+  fechaDeNacimiento = "12/05/1985"
+  estado = "Activo"
+}
+
+object "gestorProy1 : GestorDeProyecto" as gestorProy {
+  nombre = "Pedro"
+  apellidos = "Fernández López"
+  correo = "pedro.fernandez@universidad.es"
+  genero = "Masculino"
+  fechaDeNacimiento = "20/03/1980"
+  estado = "Activo"
+}
+
+object "investigador1 : Investigador" as investigador {
+  nombre = "Ana"
+  apellidos = "García Pérez"
+  correo = "ana.garcia@universidad.es"
+  genero = "Femenino"
+  fechaDeNacimiento = "18/09/1982"
+  estado = "Activo"
+  rol = "Investigadora principal"
+}
+
+object "auditor1 : Auditor" as auditor {
+  nombre = "Javier"
+  apellidos = "López Sánchez"
+  correo = "javier.lopez@universidad.es"
+  genero = "Masculino"
+  fechaDeNacimiento = "04/11/1975"
+  estado = "Activo"
+}
+
+object "institucion1 : OrganismoInstitucional" as institucion {
+  nombre = "Departamento de Calidad"
+}
+
+object "informe1 : Informe" as informe1 {
+  codigo = "INF-001"
+  titulo = "Justificación del proyecto"
+  tipo = "Justificación"
+  formato = "PDF"
+  fechaSolicitud = "01/03/2027"
+  fechaEmision = "15/03/2027"
+  periodoCubierto = "Primer trimestre de 2027"
+  estado = "Entregado"
+  contenidoAdicional = "Información complementaria"
+}
+
+object "informe2 : Informe" as informe2 {
+  codigo = "INF-002"
+  titulo = "Informe de seguimiento"
+  tipo = "Seguimiento"
+  formato = "PDF"
+  fechaSolicitud = "05/04/2027"
+  fechaEmision = "20/04/2027"
+  periodoCubierto = "Primer trimestre de 2027"
+  estado = "En elaboración"
+  contenidoAdicional = "Seguimiento de actividades y resultados"
+}
+
+entidad -- convocatoria : abre
+convocatoria -- propuesta : recibe
+
+propuesta -- proyecto : se convierte
+entidad -- proyecto : financia
+
+propuesta -- gestorProp : expone
+proyecto -- gestorProy : coordina
+
+propuesta -- investigador : presenta y coordina
+proyecto -- investigador : ejecuta
+
+proyecto -- auditor : revisa
+
+institucion -- informe1 : solicita
+entidad -- informe2 : solicita
+
+informe1 .. propuesta : refleja datos de
+informe1 .. proyecto : refleja datos de
+
+informe2 .. propuesta : refleja datos de
+informe2 .. proyecto : refleja datos de
+@enduml
