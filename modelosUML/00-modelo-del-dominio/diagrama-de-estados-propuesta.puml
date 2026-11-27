@@ -1,31 +1,31 @@
 @startuml
 scale 600 width
 
-[*] --> EXPRESION_DE_INTERES : Registrar interés inicial
+[*] --> ExpresionDeInteres : Registrar interés inicial
 
-state EXPRESION_DE_INTERES
-state EN_PREPARACION
-state ENTREGADO
-state EN_VALIDACION
-state DESCARTADO
-state RECHAZADO
-state OBTENIDO
-state NO_ACEPTADO
+state "Expresión de interés" as ExpresionDeInteres
+state "En preparación" as EnPreparacion
+state "Entregado" as Entregado
+state "En evaluación" as EnEvaluacion
+state "Descartado" as Descartado
+state "Rechazado" as Rechazado
+state "Obtenido" as Obtenido
+state "No aceptado" as NoAceptado
 
-EXPRESION_DE_INTERES --> EN_PREPARACION : Formalizar propuesta
-EXPRESION_DE_INTERES --> DESCARTADO : Cancelar interés
-EN_PREPARACION --> ENTREGADO : Presentar a convocatoria
-ENTREGADO --> EN_VALIDACION : Iniciar evaluación
+ExpresionDeInteres --> EnPreparacion : Formalizar propuesta
+ExpresionDeInteres --> Descartado : Cancelar interés
+EnPreparacion --> Entregado : Presentar a convocatoria
+Entregado --> EnEvaluacion : Iniciar evaluación
 
-EN_VALIDACION --> OBTENIDO : Concesión / crear proyecto
-EN_VALIDACION --> RECHAZADO : Entidad deniega
+EnEvaluacion --> Obtenido : Entidad aprueba
+EnEvaluacion --> Rechazado : Entidad deniega
 
-EN_PREPARACION --> DESCARTADO : Cancelar antes de entregar
-EN_VALIDACION --> NO_ACEPTADO : Concesión sin ayuda (Renuncia)
+EnPreparacion --> Descartado : Cancelar antes de entregar
+EnEvaluacion --> NoAceptado : Concesión sin ayuda (Renuncia)
 
-OBTENIDO --> [*]
-RECHAZADO --> [*]
-DESCARTADO --> [*]
-NO_ACEPTADO --> [*]
+Obtenido --> [*]
+Rechazado --> [*]
+Descartado --> [*]
+NoAceptado --> [*]
 
 @enduml

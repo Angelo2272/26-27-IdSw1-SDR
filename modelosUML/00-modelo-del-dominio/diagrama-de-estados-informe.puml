@@ -1,19 +1,19 @@
 @startuml
 
 state "Solicitado" as Solicitado
-state "En Elaboración" as Elaboracion
-state "En Revisión" as Revision
+state "En elaboración" as EnElaboracion
+state "En revisión" as EnRevision
 state "Entregado" as Entregado
 
-[*] --> Solicitado : recibe solicitud
+[*] --> Solicitado : Recibir solicitud
 
-Solicitado --> Elaboracion : iniciar elaboración
+Solicitado --> EnElaboracion : Iniciar elaboración
 
-Elaboracion --> Revision : completar informe
+EnElaboracion --> EnRevision : Completar informe
 
-Revision --> Elaboracion : rechazar informe
+EnRevision --> EnElaboracion : Rechazar informe
 
-Revision --> Entregado : validar y entregar informe
+EnRevision --> Entregado : Validar y entregar informe
 
 Entregado --> [*]
 
