@@ -41,7 +41,7 @@
 | Dimensión | Actores | Paquetes | Casos de uso |
 | :--- | :--- | :--- | :--- |
 | **Propuesta** | `UsuarioNoLogueado`, `Administrador` | Acceso al Sistema | `iniciarSesion()`, `cerrarSesion()` |
-| | | Gestión de Proyectos | `crearPropuesta()`, `editarPropuesta()`, `abrirPropuesta()`, `convertirProyecto()` |
-| **Proyecto** | `Administrador` | Ciclo de vida Vida del proyecto | `abrirProyecto()`, `abrirProyectos()`, `editarProyecto()`, `finalizarProyecto()`, `abrirHistorial()`, `asignarPersonal()`, `desasignarPersonal()` |
+| | | Ciclo de Vida de la Propuesta | `crearPropuesta()`, `editarPropuesta()`, `abrirPropuesta()`, `convertirProyecto()` |
+| **Proyecto** | `Administrador` | Gestión de Proyectos | `abrirProyecto()`, `abrirProyectos()`, `editarProyecto()`, `finalizarProyecto()`, `abrirHistorial()`, `asignarPersonal()`, `desasignarPersonal()` |
 | **Filtrado e Informes** | `Administrador` | Gestión de Organismos Externos | `crearOrganismoExterno()`, `abrirOrganismoExterno()`, `abrirOrganismosExternos()`, `editarOrganismoExterno()`, `eliminarOrganismoExterno()` |
 | | | Gestión de Informes | `abrirInformes()`, `abrirInforme()`, `generarInforme()`, `editarInforme()`, `eliminarInforme()`, `descargarInforme()`, `filtrarRegistros()` |
