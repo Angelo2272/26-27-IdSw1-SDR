@@ -27,4 +27,6 @@ Registro cronológico de las reuniones de toma de requisitos mantenidas con el c
 
 * **[Plantilla de Sesión](plantilla_sesion.md):** Formato normalizado para la elaboración de futuras minutas de requisitado.
 * **Otras Evidencias de Análisis:**
-  * [Actores y Verbos — Análisis preliminar](/evidencias/navasNicolas/Actores_Verbos.pdf) ([PNG](/evidencias/navasNicolas/Actores_Verbos.png))
+  * [Actores y Verbos — Análisis preliminar (Navas)](/evidencias/navasNicolas/Actores_Verbos.pdf) ([PNG](/evidencias/navasNicolas/Actores_Verbos.png))
+  * [Boceto preliminar de Actores y Casos de Uso (Chao)](/evidencias/chaoZhen/actores_caso_uso.png)
+  * [Boceto preliminar de Diagrama de Clases (Chao)](/evidencias/chaoZhen/diagrama_clases.png)

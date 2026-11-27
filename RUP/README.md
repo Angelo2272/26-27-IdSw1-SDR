@@ -22,7 +22,7 @@ Página concentradora de las disciplinas, fases y artefactos del sistema de **Ge
 
 | Fase / Disciplina | Artefacto Concentrador | Contenido Clave | Estado Actual |
 | :--- | :--- | :--- | :---: |
-| **00 · Modelo del Dominio** | [00-modelo-del-dominio/](/RUP/00-modelo-del-dominio/README.md) | Diagrama de clases del negocio, autómatas de estados y glosario conceptual. | Validado parcialmente |
+| **00 · Modelo del Dominio** | [00-modelo-del-dominio/](/RUP/00-modelo-del-dominio/README.md) | Diagrama de clases del negocio, autómatas de estados y glosario conceptual. | Validado (sujeto a cambios) |
 | **01 · Requisitos** | [01-actores-casos-uso/](/RUP/01-actores-casos-uso/README.md) | Delimitación de actores, catálogo de casos de uso, especificación formal y prototipos Salt. | En curso (Actividad 1) |
 | **02 · Análisis** | *02-analisis/* | Clases de análisis (*boundary, control, entity*) y diagramas de colaboración. | Planificado |
 | **03 · Diseño** | *03-diseno/* | Arquitectura del software, diagramas de secuencia, diseño de clases y persistencia. | Planificado |

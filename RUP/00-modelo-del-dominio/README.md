@@ -79,7 +79,11 @@ Modela el flujo de tramitación de los informes solicitados por organismos exter
 | **`Proyecto`** | Propuesta formalmente concedida que cuenta con financiación, cronograma y equipo ejecutor. |
 | **`Convocatoria`** | Marco competitivo (regional, nacional o internacional) abierto por una entidad financiadora. |
 | **`EntidadFinanciera`** | Organismo externo que oferta fondos públicos o privados y evalúa las propuestas. |
+| **`OrganismoExterno`** | Ente colectivo externo a la universidad (financiador o evaluador) que interactúa con la OTRI. |
+| **`OrganismoInstitucional`** | Organismo público de acreditación y estadística (ANECA, INE, etc.) que solicita informes. |
+| **`Personal`** | Censo de empleados de la universidad (PDI y PAS) que desempeñan roles de investigación, gestión o auditoría. |
 | **`Investigador`** | Personal docente e investigador (PDI) que formaliza la postulación científica y ejecuta los proyectos concedidos. |
+| **`Auditor`** | Perfil responsable de la inspección, control y validación de las cuentas y justificaciones de proyectos. |
 | **`Informe`** | Documento estructurado emitido por la OTRI para justificaciones, auditorías o estadísticas. |
 
 ### 3.2. Relaciones del Negocio
