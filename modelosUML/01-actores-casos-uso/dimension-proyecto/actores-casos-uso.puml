@@ -3,11 +3,22 @@ left to right direction
 
 actor Administrador as admin
 
-usecase "abrirProyecto()" as UC1
-usecase "editarProyecto()" as UC2
-usecase "abrirHistorial()" as UC3
+package "Gestión de Proyectos"{
+  usecase "abrirProyecto()" as abrirProyecto
+  usecase "abrirProyectos()" as abrirProyectos
+  usecase "editarProyecto()" as editarProyecto
+  usecase "finalizarProyecto()" as finalizarProyecto
+  usecase "abrirHistorial()" as abrirHistorial
+  usecase "asignarPersonal()" as asignarPersonal
+  usecase "desasignarPersonal()" as desasignarPersonal
+}
 
-admin --> UC1
-admin --> UC2
-admin --> UC3
+admin --> abrirProyecto
+admin --> abrirProyectos
+admin --> editarProyecto
+admin --> finalizarProyecto
+admin --> abrirHistorial
+admin --> asignarPersonal
+admin --> desasignarPersonal
+
 @enduml

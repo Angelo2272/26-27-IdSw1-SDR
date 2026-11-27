@@ -42,6 +42,6 @@
 | :--- | :--- | :--- | :--- |
 | **Propuesta** | `UsuarioNoLogueado`, `Administrador` | Acceso al Sistema | `iniciarSesion()`, `cerrarSesion()` |
 | | | Ciclo de Vida de la Propuesta | `crearPropuesta()`, `editarPropuesta()`, `abrirPropuesta()`, `convertirProyecto()` |
-| **Proyecto** | `Administrador` | — | `abrirProyecto()`, `editarProyecto()`, `abrirHistorial()` |
+| **Proyecto** | `Administrador` | Gestión de Proyectos | `abrirProyecto()`, `abrirProyectos()`, `editarProyecto()`, `finalizarProyecto()`, `abrirHistorial()`, `asignarPersonal()`, `desasignarPersonal()` |
 | **Filtrado e Informes** | `Administrador` | Gestión de Organismos Externos | `crearOrganismoExterno()`, `abrirOrganismoExterno()`, `abrirOrganismosExternos()`, `editarOrganismoExterno()`, `eliminarOrganismoExterno()` |
 | | | Gestión de Informes | `abrirInformes()`, `abrirInforme()`, `generarInforme()`, `editarInforme()`, `eliminarInforme()`, `descargarInforme()`, `filtrarRegistros()` |
