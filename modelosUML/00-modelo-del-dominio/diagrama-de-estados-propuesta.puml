@@ -9,7 +9,7 @@ state "Entregado" as Entregado
 state "En evaluación" as EnEvaluacion
 state "Descartado" as Descartado
 state "Rechazado" as Rechazado
-state "Obtenido" as Obtenido
+state "Concedido" as Concedido
 state "No aceptado" as NoAceptado
 
 ExpresionDeInteres --> EnPreparacion : Formalizar propuesta
@@ -17,13 +17,13 @@ ExpresionDeInteres --> Descartado : Cancelar interés
 EnPreparacion --> Entregado : Presentar a convocatoria
 Entregado --> EnEvaluacion : Iniciar evaluación
 
-EnEvaluacion --> Obtenido : Entidad aprueba
+EnEvaluacion --> Concedido : Entidad aprueba
 EnEvaluacion --> Rechazado : Entidad deniega
 
 EnPreparacion --> Descartado : Cancelar antes de entregar
 EnEvaluacion --> NoAceptado : Concesión sin ayuda (Renuncia)
 
-Obtenido --> [*]
+Concedido --> [*]
 Rechazado --> [*]
 Descartado --> [*]
 NoAceptado --> [*]
