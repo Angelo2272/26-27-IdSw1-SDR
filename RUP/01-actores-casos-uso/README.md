@@ -41,9 +41,9 @@
 | Dimensión | Actores | Paquetes | Casos de uso |
 | :--- | :--- | :--- | :--- |
 | **Convocatorias y Propuestas** | `UsuarioNoLogueado`<br>`Administrador` | Acceso al Sistema | `iniciarSesion()`, `cerrarSesion()` |
-| | `Administrador` | Gestión de Convocatorias | `abrirConvocatoria()`, `abrirConvocatorias()`, `crearConvocatoria()`, `editarConvocatoria()` |
+| | `Administrador` | Gestión de Convocatorias | `abrirConvocatoria()`, `abrirConvocatorias()`, `crearConvocatoria()`, `editarConvocatoria()`, `eliminarConvocatoria()` |
 | | `Administrador` | Gestión de Propuestas | `abrirPropuesta()`, `abrirPropuestas()`, `crearPropuesta()`, `editarPropuesta()`, `asignarPersonal()`, `desasignarPersonal()`, `concederPropuesta()`, `descartarPropuesta()`, `rechazarPropuesta()`, `entregarPropuesta()` |
-| | `Administrador` | Gestión de Persona | `abrirPersona()`, `abrirPersonas()`, `crearPersona()`, `editarPersona()` |
+| | `Administrador` | Gestión de Persona | `abrirPersona()`, `abrirPersonas()`, `crearPersona()`, `editarPersona()`, `eliminarPersona()` |
 | **Proyectos** | `Administrador` | Gestión de Proyectos | `abrirProyecto()`, `abrirProyectos()`, `editarProyecto()`, `finalizarProyecto()`, `abrirHistorial()`, `asignarPersonal()`, `desasignarPersonal()` |
 | **Filtrado e Informes** | `Administrador` | Gestión de Organismos Externos | `crearOrganismoExterno()`, `abrirOrganismoExterno()`, `abrirOrganismosExternos()`, `editarOrganismoExterno()`, `eliminarOrganismoExterno()` |
 | | `Administrador` | Gestión de Informes | `abrirInformes()`, `abrirInforme()`, `generarInforme()`, `editarInforme()`, `eliminarInforme()`, `descargarInforme()`, `filtrarRegistros()` |

@@ -13,12 +13,12 @@ package "Gestión de Proyectos"{
   usecase "desasignarPersonal()" as desasignarPersonal
 }
 
-admin --> abrirProyecto
-admin --> abrirProyectos
-admin --> editarProyecto
-admin --> finalizarProyecto
-admin --> abrirHistorial
-admin --> asignarPersonal
-admin --> desasignarPersonal
+admin -- abrirProyecto
+admin -- abrirProyectos
+admin -- editarProyecto
+admin -- finalizarProyecto
+admin -- abrirHistorial
+admin -- asignarPersonal
+admin -- desasignarPersonal
 
 @enduml

@@ -17,7 +17,6 @@ package "Gestión de Propuestas" {
   usecase "descartarPropuesta()" as UC_Descartar
   usecase "rechazarPropuesta()" as UC_Rechazar
   usecase "entregarPropuesta()" as UC_Entregar
-  usecase "eliminarPropuesta()" as UC_Eliminar
 }
 
 package "Acceso al Sistema" {
@@ -41,31 +40,30 @@ package "Gestión de Persona" {
   usecase "eliminarPersona()" as UC_EliminarPers
 }
 
-UC_AbrirProp <-- Administrador
-UC_AbrirProps <-- Administrador
-UC_CrearProp <-- Administrador
-UC_EditarProp <-- Administrador
-UC_Asignar <-- Administrador
-UC_Desasignar <-- Administrador
-UC_Conceder <-- Administrador
-UC_Descartar <-- Administrador
-UC_Rechazar <-- Administrador
-UC_Entregar <-- Administrador
-UC_Eliminar <-- Administrador
+UC_AbrirProp -- Administrador
+UC_AbrirProps -- Administrador
+UC_CrearProp -- Administrador
+UC_EditarProp -- Administrador
+UC_Asignar -- Administrador
+UC_Desasignar -- Administrador
+UC_Conceder -- Administrador
+UC_Descartar -- Administrador
+UC_Rechazar -- Administrador
+UC_Entregar -- Administrador
 
-UsuarioNoLogueado --> UC_Iniciar
-Administrador --> UC_Cerrar
+UsuarioNoLogueado -- UC_Iniciar
+Administrador -- UC_Cerrar
 
-Administrador --> UC_AbrirConv
-Administrador --> UC_AbrirConvs
-Administrador --> UC_CrearConv
-Administrador --> UC_EditarConv
-Administrador --> UC_EliminarConv
+Administrador -- UC_AbrirConv
+Administrador -- UC_AbrirConvs
+Administrador -- UC_CrearConv
+Administrador -- UC_EditarConv
+Administrador -- UC_EliminarConv
 
-Administrador --> UC_AbrirPers
-Administrador --> UC_AbrirPerss
-Administrador --> UC_CrearPers
-Administrador --> UC_EditarPers
-Administrador --> UC_EliminarPers
+Administrador -- UC_AbrirPers
+Administrador -- UC_AbrirPerss
+Administrador -- UC_CrearPers
+Administrador -- UC_EditarPers
+Administrador -- UC_EliminarPers
 
 @enduml

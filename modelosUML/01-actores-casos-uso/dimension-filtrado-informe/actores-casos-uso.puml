@@ -11,6 +11,7 @@ package "Gestión de Organismos Externos" {
     usecase abrirOrganismoExterno as "abrirOrganismoExterno()"
     usecase abrirOrganismosExternos as "abrirOrganismosExternos()"
     usecase editarOrganismoExterno as "editarOrganismoExterno()"
+    usecase eliminarOrganismoExterno as "eliminarOrganismoExterno()"
 }
 
 package "Gestión de Informes" {
@@ -23,17 +24,18 @@ package "Gestión de Informes" {
     usecase filtrarRegistros as "filtrarRegistros()"
 }
 
-crearOrganismoExterno <-- admin
-abrirOrganismoExterno <-- admin
-abrirOrganismosExternos <-- admin
-editarOrganismoExterno <-- admin
+crearOrganismoExterno -- admin
+abrirOrganismoExterno -- admin
+abrirOrganismosExternos -- admin
+editarOrganismoExterno -- admin
+eliminarOrganismoExterno -- admin
 
-admin --> abrirInformes
-admin --> abrirInforme
-admin --> generarInforme
-admin --> editarInforme
-admin --> eliminarInforme
-admin --> descargarInforme
-admin --> filtrarRegistros
+admin -- abrirInformes
+admin -- abrirInforme
+admin -- generarInforme
+admin -- editarInforme
+admin -- eliminarInforme
+admin -- descargarInforme
+admin -- filtrarRegistros
 
 @enduml
